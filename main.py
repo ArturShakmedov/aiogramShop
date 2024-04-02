@@ -230,7 +230,7 @@ async def delete_cart_products(call: CallbackQuery):
 
 
 @dp.callback_query_handler(lambda call: 'order' in call.data)
-async def create_order(call: CallbackQuery):
+async def create_order(call, PAYMENT=None):
     chat_id = call.message.chat.id
 
     _, cart_id = call.data.split('_')
